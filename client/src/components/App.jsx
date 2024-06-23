@@ -9,22 +9,26 @@ function App() {
   //fetching data
   useEffect(() => {
     const fecthPost = async () => {
-      const response = await fetch("http://localhost:4000/posts");
-      const resData = await response.json();
-      setNotes(resData);
+      try {
+        const response = await fetch("http://localhost:4000/posts");
+        const resData = await response.json();
+        setNotes(resData);
+      } catch (error) {}
     };
 
     fecthPost();
   }, [notes]);
 
   const addNote = async (userInput) => {
-    await fetch("http://localhost:4000/post", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userInput),
-    });
+    try {
+      await fetch("http://localhost:4000/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userInput),
+      });
+    } catch (error) {}
 
     setNotes((prevNote) => {
       return [...prevNote, userInput];
@@ -32,13 +36,15 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    await fetch("http://localhost:4000/delete", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify([id]),
-    });
+    try {
+      await fetch("http://localhost:4000/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([id]),
+      });
+    } catch (error) {}
 
     // setNotes((prevNote) => {
     //   return prevNote.filter((note) => {
