@@ -23,7 +23,7 @@ function App() {
 
   const addNote = async (userInput) => {
     try {
-      await fetch("http://localhost:4000/post", {
+      await fetch("https://keeper-server-psi.vercel.app/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,7 @@ function App() {
   const handleDelete = async (id) => {
     try {
     } catch (error) {}
-    await fetch("http://localhost:4000/delete", {
+    await fetch("https://keeper-server-psi.vercel.app/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
