@@ -37,14 +37,14 @@ function App() {
 
   const handleDelete = async (id) => {
     try {
-      await fetch("http://localhost:4000/delete", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify([id]),
-      });
     } catch (error) {}
+    await fetch("http://localhost:4000/delete", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify([id]),
+    });
 
     // setNotes((prevNote) => {
     //   return prevNote.filter((note) => {
