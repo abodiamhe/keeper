@@ -7,7 +7,7 @@ import env from "dotenv";
 import { sql } from "@vercel/postgres";
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT;
 env.config();
 
 app.use(bodyParser.json());
@@ -67,5 +67,5 @@ app.delete("/delete", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server listening on port ${port}`);
+  console.log(`server listening on port 4000`);
 });

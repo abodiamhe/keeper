@@ -10,7 +10,9 @@ function App() {
   useEffect(() => {
     const fecthPost = async () => {
       try {
-        const response = await fetch("http://localhost:4000/posts");
+        const response = await fetch(
+          "https://keeper-server-psi.vercel.app/posts"
+        );
         const resData = await response.json();
         setNotes(resData);
       } catch (error) {}
