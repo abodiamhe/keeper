@@ -1,8 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
-import axios from "axios";
+// import axios from "axios";
 // import cors from "cors";
-import pg from "pg";
+// import pg from "pg";
 import env from "dotenv";
 import { sql } from "@vercel/postgres";
 

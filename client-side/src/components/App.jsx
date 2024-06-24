@@ -6,6 +6,7 @@ import CreateArea from "./CreateArea";
 
 function App() {
   const [notes, setNotes] = useState([]);
+
   //fetching data
   useEffect(() => {
     const fecthPost = async () => {
@@ -32,9 +33,9 @@ function App() {
       });
     } catch (error) {}
 
-    setNotes((prevNote) => {
-      return [...prevNote, userInput];
-    });
+    // setNotes((prevNote) => {
+    //   return [...prevNote, userInput];
+    // });
   };
 
   const handleDelete = async (id) => {
